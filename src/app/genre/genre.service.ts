@@ -10,10 +10,10 @@ export class GenreService {
   constructor(private http: HttpClient) { }
 
   getAllGenres(): Observable<Array<GenreModel>> {
-    return this.http.get<Array<GenreModel>>('http://localhost:8080/api/genre/getAll');
+    return this.http.get<Array<GenreModel>>('https://backend-fanfic.herokuapp.com/api/genre/getAll');
   }
 
   createGenre(genreModel: GenreModel): Observable<GenreModel> {
-    return this.http.post<GenreModel>('http://localhost:8080/api/genre/create', genreModel);
+    return this.http.post<GenreModel>('https://backend-fanfic.herokuapp.com/api/genre/create', genreModel);
   }
 }
