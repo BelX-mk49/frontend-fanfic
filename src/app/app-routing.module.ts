@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
-import {ProfileComponent} from './profile/profile.component';
-import {BoardUserComponent} from './board-user/board-user.component';
-import {BoardAdminComponent} from './board-admin/board-admin.component';
-
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { CreatePostComponent } from './post/create-post/create-post.component';
+import { CreateGenreComponent } from './genre/create-genre/create-genre.component';
+import { ListGenresComponent } from './genre/list-genres/list-genres.component';
+import { ViewPostComponent } from './post/view-post/view-post.component';
+import { UserProfileComponent } from './auth/user-profile/user-profile.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
-  { path: 'admin', component: BoardAdminComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', component: HomeComponent },
+  { path: 'view-post/:id', component: ViewPostComponent },
+  { path: 'user-profile/:name', component: UserProfileComponent, canActivate: [AuthGuard] },
+  { path: 'list-genres', component: ListGenresComponent },
+  { path: 'create-post', component: CreatePostComponent, canActivate: [AuthGuard] },
+  { path: 'create-genre', component: CreateGenreComponent, canActivate: [AuthGuard] },
+  { path: 'sign-up', component: SignupComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

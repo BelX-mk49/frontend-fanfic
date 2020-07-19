@@ -1,5 +1,14 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
+<div class="reddit-body">
+  <div class="container">
+    <div class="row">
+      <hr />
+      <div class="col-md-9">
+        <app-post-tile [posts]="posts"></app-post-tile>
+      </div>
+      <div class="col-md-3">
+        <app-side-bar></app-side-bar>
+        <app-genre-side-bar></app-genre-side-bar>
+      </div>
+    </div>
+  </div>
 </div>

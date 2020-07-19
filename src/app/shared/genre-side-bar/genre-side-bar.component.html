@@ -1,0 +1,11 @@
+<div class="sidebar-view-genre">
+    <div style="color: black; font-weight: bold">Browse Genre</div>
+    <hr />
+    <span *ngFor="let genre of genres">
+        <span class="genre-text"><a href="/view-genre/{{genre.id}}">{{genre.name}}</a></span>
+        <hr />
+    </span>
+    <div style="text-align: center" *ngIf="displayViewAll">
+        <a style="font-weight: bold" routerLink="/list-genres">View All</a>
+    </div>
+</div>
