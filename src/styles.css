@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-html{    
+html{
   padding: 0;
-  height: 100%;  
+  height: 100%;
 }
 body{
   margin-top: 63px;
-  height: 100%; 
+  height: 100%;
 }
 
 input.ng-invalid.ng-touched {
@@ -13,7 +13,7 @@ input.ng-invalid.ng-touched {
 }
 
 .login,
-.sign-up {
+.registration {
   background-color: #0079D3;
   border-color: #0079D3;
   color: aliceblue;
@@ -31,3 +31,6 @@ input.ng-invalid.ng-touched {
   padding: 3px 16px;
   opacity: 1;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

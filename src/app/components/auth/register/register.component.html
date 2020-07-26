@@ -1,0 +1,50 @@
+<div class="register-section">
+  <div class="row justify-content-center">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header" style="text-align: center">
+          <h4>Register</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+            <div class="form-group row" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+              <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+              <div class="col-md-6">
+                <input id="email" name="email" type="email" [(ngModel)]="user.email" #email="ngModel" class="form-control" required autofocus>
+                <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">
+                                    Please provide a valid email
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+              <label for="username" class="col-md-4 col-form-label text-md-right">User Name</label>
+              <div class="col-md-6">
+                <input id="username" name="username" type="text" [(ngModel)]="user.username" #username="ngModel" class="form-control" required autofocus>
+                <span *ngIf="!registerForm.get('username').valid && registerForm.get('username').touched">
+                                    Please provide a valid username
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+              <div class="col-md-6">
+                <input id="password" name="password" type="password" [(ngModel)]="user.password" #password="ngModel" class="form-control" required>
+                <span *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">
+                                    Please provide a valid Password
+                </span>
+              </div>
+            </div>
+            <span class="col-md-6 offset-md-4">
+              <button type="submit" class="registration">Sign Up</button>
+              <span style="padding-left: 15px">Existing user? <a routerLink="/login">Log In</a></span>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
