@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../model/user';
-import {AuthService} from '../../service/auth.service';
-import {Role} from '../../model/role';
+import {User} from '../../../model/user';
 import {Router} from '@angular/router';
+import {AuthService} from '../../../service/auth.service';
+import {Role} from '../../../model/role';
 
 @Component({
   selector: 'app-auth-template',

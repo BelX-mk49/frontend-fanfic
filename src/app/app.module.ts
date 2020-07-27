@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './components/header/header.component';
+import {HeaderComponent} from './components/template/header/header.component';
 import {RegisterComponent} from './components/auth/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -39,9 +39,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {DashboardComponent} from './components/admin/dashboard/dashboard.component';
 import {UserListComponent} from './components/admin/user-list/user-list.component';
-import {AuthTemplateComponent} from './components/auth-template/auth-template.component';
+import {AuthTemplateComponent} from './components/template/auth-template/auth-template.component';
 import {NotFoundComponent} from './error/not-found/not-found.component';
 import {UnathorizedComponent} from './error/unathorized/unathorized.component';
+import {AdminTemplateComponent} from './components/template/admin-template/admin-template.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import {UnathorizedComponent} from './error/unathorized/unathorized.component';
     UserListComponent,
     AuthTemplateComponent,
     NotFoundComponent,
-    UnathorizedComponent
+    UnathorizedComponent,
+    AdminTemplateComponent
   ],
   imports: [
     BrowserModule,
