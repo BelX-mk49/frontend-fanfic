@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {User} from '../../../model/user';
 import {AuthService} from '../../../service/auth.service';
+import {throwError} from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -47,8 +48,12 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authService.login(this.user).subscribe(data => {
+      this.isError = false;
       this.router.navigate(['/']);
+      this.toastr.success('Login Successful');
     },err => {
+      this.isError = true;
+      throwError(err);
       this.errorMessage = "Username or password is incorrect.";
     });
   }

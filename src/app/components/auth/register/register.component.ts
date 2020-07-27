@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../service/auth.service';
 import {User} from 'src/app/model/user';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
   user: User = new User();
   errorMessage: string;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router,
+              private toastr: ToastrService) {
   }
 
   ngOnInit() {
@@ -28,9 +30,11 @@ export class RegisterComponent implements OnInit {
 
   register(){
     this.authService.register(this.user).subscribe(data => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login'],
+        { queryParams: { registered: 'true' } });
     },err => {
       this.errorMessage = "Username is already exist";
+      this.toastr.error('Registration Failed! Please try again');
     });
   }
 }

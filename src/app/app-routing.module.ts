@@ -7,7 +7,7 @@ import {CreatePostComponent} from './components/post/create-post/create-post.com
 import {CreateGenreComponent} from './components/genre/create-genre/create-genre.component';
 import {ListGenresComponent} from './components/genre/list-genres/list-genres.component';
 import {ViewPostComponent} from './components/post/view-post/view-post.component';
-import {UserProfileComponent} from './components/auth/user-profile/user-profile.component';
+import {UserProfileComponent} from './components/user-profile/user-profile.component';
 import {AuthGuard} from './components/auth/auth.guard';
 import {Role} from './model/role';
 import {DashboardComponent} from './components/admin/dashboard/dashboard.component';

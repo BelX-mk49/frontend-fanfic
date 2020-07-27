@@ -23,7 +23,7 @@ import {ListGenresComponent} from './components/genre/list-genres/list-genres.co
 import {EditorModule} from '@tinymce/tinymce-angular';
 import {ViewPostComponent} from './components/post/view-post/view-post.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {UserProfileComponent} from './components/auth/user-profile/user-profile.component';
+import {UserProfileComponent} from './components/user-profile/user-profile.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import {JwPaginationComponent} from 'jw-angular-pagination';
