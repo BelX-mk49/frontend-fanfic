@@ -15,7 +15,7 @@ declare var $: any;
 export class UserListComponent implements OnInit {
   userList: Array<User>;
   dataSource: MatTableDataSource<User> = new MatTableDataSource();
-  displayedColumns: string[] = ['userId', 'username', 'email', 'role', 'action'];
+  displayedColumns: string[] = ['userId', 'username', 'email', 'role', 'active', 'action'];
   selectedUser: User = new User();
   errorMessage: string;
   infoMessage: string;
