@@ -11,7 +11,8 @@
             <div class="form-group row" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
               <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
               <div class="col-md-6">
-                <input id="email" name="email" type="email" [(ngModel)]="user.email" #email="ngModel" class="form-control" required autofocus>
+                <input id="email" name="email" type="email" [(ngModel)]="user.email" #email="ngModel"
+                       class="form-control" required autofocus>
                 <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">
                                     Please provide a valid email
                 </span>
@@ -21,7 +22,8 @@
             <div class="form-group row" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
               <label for="username" class="col-md-4 col-form-label text-md-right">User Name</label>
               <div class="col-md-6">
-                <input id="username" name="username" type="text" [(ngModel)]="user.username" #username="ngModel" class="form-control" required autofocus>
+                <input id="username" name="username" type="text" [(ngModel)]="user.username" #username="ngModel"
+                       class="form-control" required autofocus>
                 <span *ngIf="!registerForm.get('username').valid && registerForm.get('username').touched">
                                     Please provide a valid username
                 </span>
@@ -31,12 +33,26 @@
             <div class="form-group row">
               <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
               <div class="col-md-6">
-                <input id="password" name="password" type="password" [(ngModel)]="user.password" #password="ngModel" class="form-control" required>
+                <input id="password" name="password" type="password" [(ngModel)]="user.password" #password="ngModel"
+                       class="form-control" required>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">Password confirmation</label>
+              <div class="col-md-6">
+                <input id="passwordConfirmation" name="confirmPassword" type="password" pattern="{{user.password}}" [(ngModel)]="confirmPassword" #password="ngModel"
+                       class="form-control" required>
+                <span class="text-danger" *ngIf="f.submitted && password.errors?.pattern">
+                  Password and confirm password does not match
+                </span>
                 <span *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">
-                                    Please provide a valid Password
+                  Please provide a valid Password
                 </span>
               </div>
             </div>
+
             <span class="col-md-6 offset-md-4">
               <button type="submit" class="registration">Sign Up</button>
               <span style="padding-left: 15px">Existing user? <a routerLink="/login">Log In</a></span>
